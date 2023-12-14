@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+    background: url('landing_bg.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+#content {
+    text-align: right;
+    margin-right: 20px;
+}
+
+#wibs_logo {
+    width: 143px;
+    height: 59px;
+    color: #006371;
+    font-size: 48px;
+    font-weight: 900;
+    margin-top: 10px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+#hero_line {
+    width: 533px;
+    height: 429.09px;
+    color: #141414;
+    font-size: 88px;
+    font-weight: 700;
+    text-align: right;
+    line-height: 1.2;
+    margin-top: 80px; 
+}
+
+#hero_line p {
+    margin: 0;
+}
+
+#tag_line {
+    width: 531px;
+    height: 47px;
+    color: #006371;
+    font-family: Cambria, serif;
+    font-size: 40px;
+    font-weight: 400;
+    text-align: right;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+
+#get_started_button {
+    width: 358px;
+    height: 104px;
+    background: #0b464e;
+    border: none;
+    border-radius: 15px; 
+    box-shadow: -3px 4px 2px 4px rgba(100, 100, 100, 0.5);
+    align-self: center;
+    margin-bottom: 100px;
+}
+
+#get_started_text {
+    width: 208px;
+    height: 65px;
+    color: #ffffff;
+    font-family: Poppins, sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    margin: auto;
+    margin-top: 25px;
+}
