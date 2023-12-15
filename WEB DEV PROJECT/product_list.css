@@ -52,15 +52,15 @@ header {
 }
 
 .image-container {
-    width: 50%; /* or any other appropriate width */
+    width: 50%; 
     display: inline-block;
     vertical-align: top;
 }
 
 .image-container img {
-    width: 80%; /* make the image responsive */
-    height: auto; /* maintain aspect ratio */
-    display: block; /* remove any extra space below the image */
+    width: 80%;
+    height: auto; 
+    display: block; 
 }
 
 .details-container {
@@ -80,14 +80,6 @@ h1 {
 
 .description {
     margin: 20px 0;
-}
-
-.color-selection {
-    /* Style for color options */
-}
-
-.quantity-selector {
-    /* Style for quantity selector */
 }
 
 .add-to-cart {
