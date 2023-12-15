@@ -1,85 +1,93 @@
-body, h2, a {
+body, h1, p {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #f7f7f7;
-    padding: 1em;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
 }
 
-.navigation {
-    display: flex;
-    align-items: center;
-    width: 100%;
+.arrow img {
+    height: 16px; 
+    width: auto; 
+    cursor: pointer;
 }
 
-.nav-arrow {
-    font-size: 24px;
-    text-decoration: none;
-    color: #333;
-    padding: 0.5em;
-    margin-right: 1em;
-}
-
-.product-details-title {
-    flex-grow: 1;
+.product-title {
+    flex: 1;
     text-align: center;
-    color: #333;
-    font-weight: normal;
+    font-size: 40px;
+    font-weight: bold;
 }
 
 .logo {
+    font-size: 20px;
     font-weight: bold;
-    color: #0055a5;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
 }
 
 .product-details {
     display: flex;
-    padding: 20px;
 }
 
 .image-container {
-    width: 50%; 
-    display: inline-block;
-    vertical-align: top;
+    flex: 1;
+    padding-right: 20px;
+    background-color: rgb(247, 168, 181);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
 }
 
 .image-container img {
-    width: 80%;
-    height: auto; 
-    display: block; 
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 .details-container {
     flex: 2;
-    margin-left: 20px;
+    padding-left: 20px;
+    background-color: #ffcbcb; 
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 8px; 
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 28px;
     color: #333;
+    margin-bottom: 20px;
 }
 
 .price {
     color: #888;
-    font-size: 20px;
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
 .description {
-    margin: 20px 0;
+    margin-bottom: 20px;
+}
+
+.color-selection {
+    margin-bottom: 20px;
+    /* Additional styles for color selection */
+}
+
+.quantity-selector {
+    margin-bottom: 20px;
+    /* Additional styles for quantity selector */
 }
 
 .add-to-cart {
@@ -89,8 +97,12 @@ h1 {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    display: inline-block;
+    text-align: center;
 }
 
 .add-to-cart:hover {
     background-color: #003399;
 }
+
+/* Additional responsive design styles, color selection and quantity selector styles would be needed */
