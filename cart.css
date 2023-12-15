@@ -50,16 +50,21 @@ h1 {
 
 .main {
     padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
   
 .cart-items {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 20px;
+    flex-direction: column;
+    max-width: 50%;
 }
   
 .cart-items .item {
-    width: 45%;
+    width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
     margin-bottom: 10px;
@@ -67,6 +72,18 @@ h1 {
   
 .cart-items .item img {
     width: 100px;
+}
+
+.cart-items .item .item-image1 {
+    background-color: #d2a888;
+    float: left;
+    margin-right: 20px;
+}
+
+.cart-items .item .item-image2 {
+    background-color: #bccacc;
+    float: left;
+    margin-right: 20px;
 }
   
 .cart-items .item .item-info {
@@ -81,6 +98,16 @@ h1 {
 .order-summary {
     background-color: #eee;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    width: 40%;
+}
+
+.order-summary .order-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .order-summary h3{
