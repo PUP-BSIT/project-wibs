@@ -1,0 +1,104 @@
+body, h2, a {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f7f7f7;
+    padding: 1em;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-arrow {
+    font-size: 24px;
+    text-decoration: none;
+    color: #333;
+    padding: 0.5em;
+    margin-right: 1em;
+}
+
+.product-details-title {
+    flex-grow: 1;
+    text-align: center;
+    color: #333;
+    font-weight: normal;
+}
+
+.logo {
+    font-weight: bold;
+    color: #0055a5;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.product-details {
+    display: flex;
+    padding: 20px;
+}
+
+.image-container {
+    width: 50%; /* or any other appropriate width */
+    display: inline-block;
+    vertical-align: top;
+}
+
+.image-container img {
+    width: 80%; /* make the image responsive */
+    height: auto; /* maintain aspect ratio */
+    display: block; /* remove any extra space below the image */
+}
+
+.details-container {
+    flex: 2;
+    margin-left: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.price {
+    color: #888;
+    font-size: 20px;
+}
+
+.description {
+    margin: 20px 0;
+}
+
+.color-selection {
+    /* Style for color options */
+}
+
+.quantity-selector {
+    /* Style for quantity selector */
+}
+
+.add-to-cart {
+    background-color: #006371;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #003399;
+}
