@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+<div class="header">
+  <div class="back-button">
+    <button><img src="back_button.png"></button>
+  </div>
+  <div class="title">
+    <h1>My Cart</h1>
+  </div>
+  <div class="logo">
+    <img src="logo.png">
+  </div>
+</div>
+<div class="nav">
+    <ul>
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">SHOP</a></li>
+      <li><a href="#">ORDER STATUS</a></li>
+    </ul>
+  </div>
+<div class="main">
+  
+  <div class="cart-items">
+    <div class="item">
+      <img src="wooden_accent_chair.png">
+      <div class="item-info">
+        <h3>Wooden Accent Chair (Anjing Variant)</h3>
+        <p>$200.00</p>
+        <select name="color">
+          <option value="brown">Brown</option>
+          <option value="gray">Gray</option>
+          <option value="white">White</option>
+        </select>
+      </div>
+    </div>
+    <div class="item">
+      <img src="drop_it_down_statue.png">
+      <div class="item-info">
+        <h3>Drop it Down Statue (Anjing Shades)</h3>
+        <p>$730.00</p>
+        <select name="color">
+          <option value="black">Black</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="order-summary">
+    <h3>Order Summary</h3>
+    <p>Subtotal: $930.00</p>
+    <p>Tax Included</p>
+    <p>Mode of Payment:</p>
+    <ul>
+      <li><input type="radio" 
+            name="payment" 
+            value="cash-on-delivery"> 
+            Cash on Delivery</li>
+      <li><input type="radio"
+            name="payment" 
+            value="bank"> 
+            Through Bank</li>
+    </ul>
+    <button type="submit">Check Out</button>
+  </div>
+</div>
+</body>
+</html>
