@@ -1,5 +1,3 @@
-/* ... (your existing styles) ... */
-
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 20px;
@@ -8,7 +6,7 @@ body {
 }
 
 header {
-    background-color: rgba(255, 255, 255, 0.9); /* Increase opacity for a less transparent header */
+    background-color: rgba(255, 255, 255, 0.9);
     color: #000000;
     padding: 10px;
     display: flex;
@@ -17,19 +15,18 @@ header {
 }
 
 .cart-icon a {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit the color from the parent, or you can set a specific color */
+    text-decoration: none; 
+    color: inherit; 
 }
 
 .cart-icon a:hover {
-    /* Define styles for the link when hovered, if needed */
-    text-decoration: none; /* Remove underline on hover */
-    color: #0B464E; /* Inherit the color on hover */
+    text-decoration: none;
+    color: #0B464E; 
 }
 
 .customer-name {
-    font-size: 24px; /* Adjust font size for customer name */
-    font-weight: bold; /* Make customer name bold */
+    font-size: 24px;
+    font-weight: bold; 
 }
 
 .left-section,
@@ -57,7 +54,7 @@ nav a {
     padding: 14px 16px;
     text-decoration: none;
     flex: 1;
-    font-size: 16px; /* Adjust font size for navigation links */
+    font-size: 16px;
 }
 
 nav a:hover {
@@ -73,8 +70,8 @@ nav a:hover {
 h2 {
     text-align: left;
     font-family: 'Montserrat', sans-serif;
-    font-size: 20px; /* Adjust font size for h2 elements */
-    margin-bottom: 10px; /* Add margin to the bottom of h2 elements */
+    font-size: 20px; 
+    margin-bottom: 10px; 
 }
 
 .section {
@@ -91,7 +88,7 @@ h2 {
 .right-content,
 .additional-content {
     box-sizing: border-box;
-    padding: 15px; /* Increase padding for content boxes */
+    padding: 15px; 
     background-color: #ebcdab;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -114,7 +111,7 @@ h2 {
 }
 
 .discount p {
-    color: #fff; /* Set text color to white */
+    color: #fff; 
     font-size: 24px;
     font-weight: bold;
     margin: 0;
@@ -130,15 +127,15 @@ h2 {
 
 button {
     padding: 10px;
-    background-color: #0B464E; /* Set the background color for the button */
-    color: #fff; /* Set text color to white */
+    background-color: #0B464E;
+    color: #fff; 
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #255763; /* Set the background color on hover */
+    background-color: #255763; 
 }
 
 
@@ -160,4 +157,3 @@ button:hover {
     /* Additional right content styles */
 }
 
-/* ... (your existing styles) ... */
