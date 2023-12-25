@@ -18,7 +18,7 @@ body, h1, p {
 }
 
 .arrow img {
-    height: 16px; 
+    height: 25px; 
     width: auto; 
     cursor: pointer;
 }
@@ -42,7 +42,7 @@ body, h1, p {
 .image-container {
     flex: 1;
     padding-right: 20px;
-    background-color: rgb(247, 168, 181);
+    background-color: #ffc582;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,7 +58,7 @@ body, h1, p {
 .details-container {
     flex: 2;
     padding-left: 20px;
-    background-color: #ffcbcb; 
+    background-color: #ebcdab; 
     padding: 20px;
     box-sizing: border-box;
     border-radius: 8px; 
