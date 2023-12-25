@@ -1,0 +1,159 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000000;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-icon a {
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.cart-icon a:hover {
+    text-decoration: none;
+    color: #0B464E; 
+}
+
+.customer-name {
+    font-size: 24px;
+    font-weight: bold; 
+}
+
+.left-section,
+.right-section {
+    display: flex;
+    align-items: center;
+}
+
+.profile-icon,
+.cart-icon {
+    margin-right: 10px;
+}
+
+nav {
+    background-color: #0B464E;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    flex: 1;
+    font-size: 16px;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: #333;
+}
+
+.main-content {
+    max-width: 85%;
+    margin: 20px auto;
+}
+
+h2 {
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px; 
+    margin-bottom: 10px; 
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.left-content,
+.right-content,
+.additional-content {
+    box-sizing: border-box;
+    padding: 15px; 
+    background-color: #ebcdab;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.right-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.left-content {
+    display: flex;
+    align-items: center;
+}
+
+.discount {
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.discount p {
+    color: #fff; 
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.description {
+    flex-grow: 1;
+}
+
+.description p {
+    font-size: 18px;
+}
+
+button {
+    padding: 10px;
+    background-color: #0B464E;
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #255763; 
+}
+
+
+.additional-content {
+    background-color: #cce8ec;
+    margin-right: 10px;
+    flex-grow: 1;
+}
+
+.additional-content:last-child {
+    margin-right: 0;
+}
+
+.additional-content.left {
+    
+}
+
+.additional-content.right {
+   
+}
+
