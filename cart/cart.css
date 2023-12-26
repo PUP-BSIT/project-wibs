@@ -1,7 +1,7 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Arial', sans-serif;
+    background: #f4f4f4;
     margin: 0;
-    padding: 0;
 }
   
 .header {
@@ -12,7 +12,8 @@ body {
 }
 
 .header .back-button button {
-    border: hidden;
+    border: none;
+    background: none;
 }
 
 .header .back-button button img{
@@ -51,16 +52,17 @@ h1 {
 .main {
     padding: 20px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
   
 .cart-items {
-    display: flex;
     flex-wrap: wrap;
     margin-bottom: 20px;
     flex-direction: column;
-    max-width: 50%;
+    max-width: 60%;
+    min-width: 60%;
 }
   
 .cart-items .item {
@@ -68,6 +70,7 @@ h1 {
     padding: 10px;
     border: 1px solid #ddd;
     margin-bottom: 10px;
+    padding: 30px;
 }
   
 .cart-items .item img {
@@ -94,10 +97,51 @@ h1 {
     font-size: 24px;
     margin-bottom: 5px;
 }
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cart-items .item .item-info .buttons .color-selector select {
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.quantity-selector {
+    display: flex;
+    border: 1px solid #ccc;
+    width: fit-content;
+}
+  
+.quantity-selector button {
+    border: none;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+  
+.quantity-selector button:active {
+    background-color: #f0f0f0;
+}
+  
+.quantity-selector .quantity-input {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.cart-items .item .item-info .buttons .remove-button button {
+    padding: 10px;
+    border-radius: 30px;
+}
   
 .order-summary {
     background-color: #eee;
-    padding: 20px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     max-width: 50%;
