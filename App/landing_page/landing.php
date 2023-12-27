@@ -21,7 +21,7 @@
         <div id="tag_line">"Seamless Style, Yours to Own."</div>
     </div>
 
-    <a href="/App/login/login.html" id="get_started_button">
+    <a href="../login/login.php" id="get_started_button">
         <div id="get_started_text">Get Started</div>
     </a>
 </div>
