@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect('localhost','root','','ecommerce');
+$conn = mysqli_connect('127.0.0.1:3306','u733671518_wibs','|4Kh/3XYD','u733671518_project');
 
 $error = array(); 
 
@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
 
 <body>
   <header class="header">
-    <div class="header-icon"><a href="../landing_page/landing.php">Back</a></div>
+    <div class="header-icon"><a href="../landing_page/landing.html">Back</a></div>
     <div class="header-title"><img src="./ASSETS/Company Name.png" alt=""></div>
   </header>
 
