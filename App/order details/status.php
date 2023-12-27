@@ -9,7 +9,7 @@
 <body>
 <div class="header">
   <div class="back-button">
-    <button><img src="back_button.png"></button>
+    <button><a href="../homepage/homepage.php"><img src="back_button.png"></a></button>
   </div>
   <div class="title">
     <h1>Order Status</h1>
@@ -20,9 +20,8 @@
 </div>
 <div class="nav">
     <ul>
-      <li><a href="#">HOME</a></li>
-      <li><a href="#">SHOP</a></li>
-      <li><a href="#">ORDER STATUS</a></li>
+      <li><a href="../homepage/homepage.php">HOME</a></li>
+      <li><a href="../order details/status.php">ORDER STATUS</a></li>
     </ul>
 </div>
 <div class="timeline">

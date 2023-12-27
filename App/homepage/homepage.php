@@ -15,15 +15,14 @@
             <div class="customer-name"><b>AJ Alejandro</b></div>
         </div>
         <div class="right-section">
-            <div class="cart-icon"><img src="/Documents/ASSETS/Cart.png" alt=""></div>
-            <div class="logo"><img src="/Doduments/ASSETS/Company Name.png" alt=""></div>
+            <div class="cart-icon"><a href="../cart/cart.html"><img src="../ASSETS/Cart.png" alt=""></a></div>
+            <div class="logo"><img src="../ASSETS/Company Name.png" alt=""></div>
         </div>
     </header>
 
     <nav>
-        <a href="#home">Home</a>
-        <a href="#shop">Shop</a>
-        <a href="#orderstatus">Order Status</a>
+        <a href="#">Home</a>
+        <a href="../order details/status.php">Order Status</a>
     </nav>
 
     <div class="main-content">
