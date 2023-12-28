@@ -3,26 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Cart and Place Order</title>
-    <link rel="stylesheet" href="./css/cart.css">
+    <link rel="stylesheet" href="../css/cart.css">
 </head>
+
 <body>
-<div class="header">
-  <div class="back-button">
-    <button><a href="../homepage/homepage.php"><img src="back_button.png"></a></button>
-  </div>
-  <div class="title">
-    <h1>My Cart</h1>
-  </div>
-  <div class="logo">
-    <img src="logo.png">
-  </div>
-</div>
-<div class="nav">
-    <ul>
-      <li><a href="../homepage/homepage.php">HOME</a></li>
-      <li><a href="../order details/status.php">ORDER STATUS</a></li>
-    </ul>
-  </div>
+  <div class="navbar">
+        <div class="logo">WIBS</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#orderstatus">Order Status</a>
+            <a href="#mycart">My Cart</a>
+        </div>
+        <div class="profile-name"><strong>AJ Alejandro</strong></div>
+    </div>
+
+    <div class="my-cart">
+      <h1>My Cart</h1>
+    </div>
 
   <div class="main">
   <div class="cart-items">
@@ -89,5 +86,9 @@
     </div>
   </div>
 </div>
+
+<footer class="site-footer">
+        <p>&copy; 2023 WIBS. All rights reserved.</p>
+    </footer>
 </body>
 </html>
