@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Details</title>
-    <link rel="stylesheet" href="product_list.css">
+    <link rel="stylesheet" href="../css/product_list.css">
 </head>
 <body>
     <div class="container">
         <header class="header">
             <div class="arrow">
                 <a href="previous-page.html">
-                    <img src="Back.png" alt="Back">
+                    <img src="../ASSETS/Back.png" alt="Back">
                 </a>
             </div>
             <div class="product-title">Product Details</div>
             <div class="logo">
                 <a href="homepage.html">
-                    <img src="Logo.png" alt="WIBS">
+                    <img src="../ASSETS/company name.png" alt="WIBS">
                 </a>
             </div>
         </header>
         <main class="product-details">
             <div class="image-container">
-                <img src="object_3.png" alt="Wooden Accent Chair">
+                <img src="../ASSETS/object_3.png" alt="Wooden Accent Chair">
             </div>
             <div class="details-container">
                 <h1>Wooden Accent Chair (Anjing Variant)</h1>

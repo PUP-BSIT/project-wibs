@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Order Status</title>
-  <link rel="stylesheet" href="view.css">
+  <link rel="stylesheet" href="../css/order_status.css">
 </head>
 <body>
 <div class="header">
   <div class="back-button">
-    <button><a href="../homepage/homepage.php"><img src="back_button.png"></a></button>
+    <button><a href="../homepage/homepage.php"><img src="../ASSETS/Back.png"></a></button>
   </div>
   <div class="title">
     <h1>Order Status</h1>
   </div>
   <div class="logo">
-    <img src="logo.png">
+    <img src="../ASSETS/Company Name.png">
   </div>
 </div>
 <div class="nav">

@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Montserrat, sans-serif;
-    background: url('landing_bg.png') no-repeat center center fixed;
+    background: url('../ASSETS/landing_bg.png') no-repeat center center fixed;
     background-size: cover;
 }
 

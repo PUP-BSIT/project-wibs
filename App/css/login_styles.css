@@ -10,6 +10,7 @@ body {
   padding: 15px 92px;
   background-color: #ffffff;
 }
+
 .header-icon {
   width: 30px;
   height: 30px; 
@@ -74,13 +75,17 @@ body {
 .header-icon a {
     display: inline-block;
     padding: 8px 12px; 
-    background: url('assets/back-icon.png') no-repeat center center; 
     background-size: contain; 
     text-indent: -9999px; 
     width: 30px; 
     height: 30px; 
     border: none; 
     cursor: pointer;
+}
+
+.header-icon a img {
+  width: 300px;
+  height: 300px;
 }
 
 .header-icon a:hover {

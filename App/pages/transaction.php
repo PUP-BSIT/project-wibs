@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transaction Page</title>
-    <link rel="stylesheet" href="transaction_styles.css">
+    <link rel="stylesheet" href="../css/transaction_styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 </head>
 <body>
@@ -73,6 +73,6 @@
         <p>&copy; 2023 WIBS. All rights reserved.</p>
     </footer>
 
-    <script src="transaction_script.js"></script>
+    <script src="../js/transaction_script.js"></script>
 </body>
 </html>

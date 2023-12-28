@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-$conn = mysqli_connect('127.0.0.1:3306',' u733671518_wibs','|4Kh/3XYD','u733671518_project');
+$conn = mysqli_connect('127.0.0.1:3306','u733671518_wibs','|4Kh/3XYD','u733671518_project');
 
 session_start();
 
@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = md5($_POST['password']);
  
-    $select = "SELECT * FROM user_form WHERE email = ? AND password = ?";
+    $select = "SELECT * FROM customer WHERE email = ? AND password = ?";
     $stmt = mysqli_prepare($conn, $select);
     mysqli_stmt_bind_param($stmt, "ss", $email, $password);
     mysqli_stmt_execute($stmt);
@@ -34,14 +34,14 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="login_styles.css" />
+    <link rel="stylesheet" href="../css/login_styles.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
     <title>WIBS Login</title>
 </head>
 
 <body>
     <header class="header">
-        <div class="header-icon"><a href="../landing_page/landing.php"><img src="../ASSETS/Back.png" alt=""></a></div>
+        <a href="../landing_page/landing.php"><img src="../ASSETS/back.png" alt="asdasdasd"></a>
         <div class="header-title"><img src="../ASSETS/Company Name.png" alt="pciture"></div>
     </header>
 
