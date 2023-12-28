@@ -19,6 +19,10 @@
         <div class="profile-name"><strong>AJ Alejandro</strong></div>
     </div>
 
+    <div class="transaction-text">
+      <h1>Complete your Transaction</h1>
+    </div>
+
     <div class="main-container">
         <div class="transaction-container">
             <div class="form-and-notes-container">

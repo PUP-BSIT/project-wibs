@@ -51,6 +51,13 @@ body {
     border-radius: 4px;
 }
 
+.transaction-text {
+    text-align: center; /* Center the text */
+    padding: 0px; /* Add some padding */
+    margin: 0px; /* Center the div and add margin */
+    font-size: 25px;
+}
+
 .main-container {
     width: 80%;
     margin: 40px auto;
