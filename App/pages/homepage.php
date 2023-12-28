@@ -4,22 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Website</title>
-    <link rel="stylesheet" href="./homepage_styles.css">
+    <link rel="stylesheet" href="../css/homepage_styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 </head>
 <body>
-
-    <!-- Navbar from transaction page -->
     <div class="navbar">
-    <div class="logo">WIBS</div>
-    <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#orderstatus">Order Status</a>
-        <a href="#mycart">My Cart</a>
+        <div class="logo">WIBS</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#orderstatus">Order Status</a>
+            <a href="#mycart">My Cart</a>
+        </div>
+        <div class="profile-name"><strong>AJ Alejandro</strong></div>
     </div>
-    <div class="profile-name"><strong>AJ Alejandro</strong></div>
-    </div>
-</div>
 
 
     <div class="main-content">

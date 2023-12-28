@@ -13,9 +13,10 @@
         <div class="logo">WIBS</div>
         <div class="nav-links">
             <a href="#home">Home</a>
-            <a href="#shop">Shop</a>
             <a href="#orderstatus">Order Status</a>
+            <a href="#mycart">My Cart</a>
         </div>
+        <div class="profile-name"><strong>AJ Alejandro</strong></div>
     </div>
 
     <div class="main-container">

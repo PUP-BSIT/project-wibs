@@ -12,14 +12,31 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    width: 100%;
 }
 
 .logo {
-    width: 143px;
-    height: 59px;
-    color: #ffffff;
-    font-size: 48px;
+    font-size: 48px; /* Original larger size */
     font-weight: 900;
+    color: #ffffff;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.profile-name {
+    color: white;
+    margin-bottom: 10px; /* Space between profile name and nav links */
+    margin-right: 54px; /* Adjust this to align with the navbar's end */
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+.nav-links {
+    display: flex;
+    padding-right: 40px; /* Adjust as necessary */
 }
 
 .nav-links a {
