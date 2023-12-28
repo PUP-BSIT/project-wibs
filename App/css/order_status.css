@@ -4,49 +4,57 @@ body {
   margin: 0;
 }
 
-.header {
+.navbar {
+  background-color: #0B464E;
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 10px 20px;
+  width: 100%;
 }
 
-.header .back-button button {
-  border: none;
-  background: none;
+.logo {
+  font-size: 48px; /* Original larger size */
+  font-weight: 900;
+  color: #ffffff;
 }
 
-.header .back-button button img {
-  width: 50px;
-}
-
-h1 {
-  font-size: 50px;
-  margin-bottom: 20px;
-}
-
-.nav {
+.nav-container {
   display: flex;
-  justify-content: center;
-  background-color: #006371;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
-.nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.profile-name {
+  color: white;
+  margin-bottom: 10px; /* Space between profile name and nav links */
+  margin-right: 54px; /* Adjust this to align with the navbar's end */
+  font-size: 16px; /* Adjust font size as needed */
 }
 
-.nav ul li {
-  display: inline-block;
-  padding: 10px;
+.nav-links {
+  display: flex;
+  padding-right: 40px; /* Adjust as necessary */
 }
 
-.nav ul li a {
+.nav-links a {
+  color: white;
   text-decoration: none;
-  color: #ececec;
-  margin-left: 200px;
-  margin-right: 200px;
+  padding: 8px 15px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: #255763;
+  border-radius: 4px;
+}
+
+.status-text {
+  text-align: center; /* Center the text */
+  padding: 0px; /* Add some padding */
+  margin: 0px; /* Center the div and add margin */
+  font-size: 25px;
 }
 
 .timeline {
@@ -54,6 +62,7 @@ h1 {
   max-width: 900px;
   margin: 0 auto;
   padding: 0;
+  margin-bottom: 50px; /* Added bottom margin */
 }
 
 .timeline::after {
@@ -111,4 +120,13 @@ h1 {
 
 .content h2 {
   margin-top: 0;
+}
+
+
+.site-footer {
+  background-color: #0B464E;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 16px;
 }
