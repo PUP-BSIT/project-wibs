@@ -4,26 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Website</title>
-    <link rel="stylesheet" href="../css/homepage_styles.css">
+    <link rel="stylesheet" href="./homepage_styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 </head>
 <body>
 
-    <header>
-        <div class="left-section">
-            <div class="profile-icon"><img src="/Documents/ASSETS/Male User.png" alt=""></div>
-            <div class="customer-name"><b>AJ Alejandro</b></div>
-        </div>
-        <div class="right-section">
-            <div class="cart-icon"><a href="../cart/cart.html"><img src="../ASSETS/Cart.png" alt=""></a></div>
-            <div class="logo"><img src="../ASSETS/Company Name.png" alt=""></div>
-        </div>
-    </header>
+    <!-- Navbar from transaction page -->
+    <div class="navbar">
+    <div class="logo">WIBS</div>
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#orderstatus">Order Status</a>
+        <a href="#mycart">My Cart</a>
+    </div>
+    <div class="profile-name"><strong>AJ Alejandro</strong></div>
+    </div>
+</div>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="../order details/status.php">Order Status</a>
-    </nav>
 
     <div class="main-content">
         <div class="section">
@@ -40,7 +37,6 @@
                     <img src="/Documents/ASSETS/Objects 3.png" alt="Product Image">
                 </div>
                 <div class="right-content">
-                    <div class=""></div>
                     <img src="./Documents/ASSETS/Bust of a statue wearing sunglasses.png" alt="">
                 </div>
             </div>
@@ -67,6 +63,11 @@
             </div>
         </div>
     </div>
+
+    <!-- Footer from transaction page -->
+    <footer class="site-footer">
+        <p>&copy; 2023 WIBS. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>

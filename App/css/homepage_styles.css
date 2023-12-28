@@ -1,77 +1,62 @@
 body {
     font-family: 'Montserrat', sans-serif;
-    margin: 20px;
+    margin: 0;
     padding: 0;
     background-color: #ffffff;
 }
 
-header {
-    background-color: rgba(255, 255, 255, 0.9);
-    color: #000000;
-    padding: 10px;
+/* Navbar styling from transaction page */
+.navbar {
+    background-color: #0B464E;
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
+    width: 100%;
 }
 
-.cart-icon a {
-    text-decoration: none; 
-    color: inherit; 
+.logo {
+    font-size: 48px; /* Original larger size */
+    font-weight: 900;
+    color: #ffffff;
 }
 
-.cart-icon a:hover {
-    text-decoration: none;
-    color: #0B464E; 
-}
-
-.customer-name {
-    font-size: 24px;
-    font-weight: bold; 
-}
-
-.left-section,
-.right-section {
+.nav-container {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
-.profile-icon,
-.cart-icon {
-    margin-right: 10px;
+.profile-name {
+    color: white;
+    margin-bottom: 10px; /* Space between profile name and nav links */
+    margin-right: 54px; /* Adjust this to align with the navbar's end */
+    font-size: 16px; /* Adjust font size as needed */
 }
 
-nav {
-    background-color: #0B464E;
-    overflow: hidden;
+.nav-links {
     display: flex;
-    justify-content: space-around;
+    padding-right: 40px; /* Adjust as necessary */
 }
 
-nav a {
-    display: block;
-    color: #fff;
-    text-align: center;
-    padding: 14px 16px;
+.nav-links a {
+    color: white;
     text-decoration: none;
-    flex: 1;
-    font-size: 16px;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease;
 }
 
-nav a:hover {
-    background-color: #ddd;
-    color: #333;
+.nav-links a:hover {
+    background-color: #255763;
+    border-radius: 4px;
 }
 
+
+/* Original styles for main content */
 .main-content {
     max-width: 85%;
     margin: 20px auto;
-}
-
-h2 {
-    text-align: left;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px; 
-    margin-bottom: 10px; 
 }
 
 .section {
@@ -88,7 +73,7 @@ h2 {
 .right-content,
 .additional-content {
     box-sizing: border-box;
-    padding: 15px; 
+    padding: 15px;
     background-color: #ebcdab;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -111,7 +96,7 @@ h2 {
 }
 
 .discount p {
-    color: #fff; 
+    color: #fff;
     font-size: 24px;
     font-weight: bold;
     margin: 0;
@@ -128,16 +113,15 @@ h2 {
 button {
     padding: 10px;
     background-color: #0B464E;
-    color: #fff; 
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #255763; 
+    background-color: #255763;
 }
-
 
 .additional-content {
     background-color: #cce8ec;
@@ -149,11 +133,15 @@ button:hover {
     margin-right: 0;
 }
 
-.additional-content.left {
-    
+/* Footer styling from transaction page */
+.site-footer {
+    background-color: #0B464E;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 16px;
+    margin: 0; /* Remove margin */
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
 }
-
-.additional-content.right {
-   
-}
-
