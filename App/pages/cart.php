@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Cart and Place Order</title>
-    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="../css/cart.css">
 </head>
 <body>
 <div class="header">

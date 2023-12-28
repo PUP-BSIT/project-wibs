@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
     } else {
       $insert = "INSERT INTO customer(firstname, lastname, name, email, password, address) VALUES('$firstname', '$lastname', '$name', '$email', '$pass', '$address')";
       mysqli_query($conn, $insert);
-      header('location: ../login/login.php');
+      header('location:login.php');
       exit;
     }
   }
@@ -106,7 +106,7 @@ if (isset($_POST['submit'])) {
         </div>
         <div id="signupResult"></div>
         <div class="signup-link">
-          Already have an account? <a href="../login/login.php">Sign In</a>.
+          Already have an account? <a href="login.php">Sign In</a>.
         </div>
       </form>
     </div>
