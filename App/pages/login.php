@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_array($result);
         $_SESSION['user_name'] = $row['name'];
-        header('location: ../homepage/homepage.php');
+        header('location:homepage.php');
         exit();
     } else {
         $errors[] = 'Incorrect email or password!';
@@ -41,7 +41,7 @@ if (isset($_POST['submit'])) {
 
 <body>
     <header class="header">
-        <a href="../landing_page/landing.php"><img src="../ASSETS/back.png" alt="asdasdasd"></a>
+        <a href="landing.php"><img src="../ASSETS/Back.png" alt="asdasdasd"></a>
         <div class="header-title"><img src="../ASSETS/Company Name.png" alt="pciture"></div>
     </header>
 
@@ -70,7 +70,7 @@ if (isset($_POST['submit'])) {
                 </div>
                 <div id="loginResult"></div>
                 <div class="signup-link">
-                    Don't have an account? <a href="../signup/signup.php">Sign Up</a>.
+                    Don't have an account? <a href="signup.php">Sign Up</a>.
                 </div>
             </form>
         </div>
