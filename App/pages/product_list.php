@@ -6,21 +6,23 @@
     <title>Product Details</title>
     <link rel="stylesheet" href="../css/product_list.css">
 </head>
+
 <body>
+    <div class="navbar">
+        <div class="logo">WIBS</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#orderstatus">Order Status</a>
+            <a href="#mycart">My Cart</a>
+        </div>
+        <div class="profile-name"><strong>AJ Alejandro</strong></div>
+    </div>
+
+    <div class="details-text">
+      <h1>Your Product Details</h1>
+    </div>
+
     <div class="container">
-        <header class="header">
-            <div class="arrow">
-                <a href="previous-page.html">
-                    <img src="../ASSETS/Back.png" alt="Back">
-                </a>
-            </div>
-            <div class="product-title">Product Details</div>
-            <div class="logo">
-                <a href="homepage.html">
-                    <img src="../ASSETS/company name.png" alt="WIBS">
-                </a>
-            </div>
-        </header>
         <main class="product-details">
             <div class="image-container">
                 <img src="../ASSETS/object_3.png" alt="Wooden Accent Chair">
@@ -39,5 +41,9 @@
             </div>
         </main>
     </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2023 WIBS. All rights reserved.</p>
+    </footer>
 </body>
 </html>

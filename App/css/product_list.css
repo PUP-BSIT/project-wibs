@@ -4,34 +4,69 @@ body, h1, p {
     font-family: 'Arial', sans-serif;
 }
 
+.navbar {
+    background-color: #0B464E;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+  }
+  
+  .logo {
+    font-size: 48px; /* Original larger size */
+    font-weight: 900;
+    color: #ffffff;
+  }
+  
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .profile-name {
+    color: white;
+    margin-bottom: 10px; /* Space between profile name and nav links */
+    margin-right: 54px; /* Adjust this to align with the navbar's end */
+    font-size: 16px; /* Adjust font size as needed */
+  }
+  
+  .nav-links {
+    display: flex;
+    padding-right: 40px; /* Adjust as necessary */
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    background-color: #255763;
+    border-radius: 4px;
+  }
+  
+  .details-text {
+    text-align: center; /* Center the text */
+    padding: 0px; /* Add some padding */
+    margin: 20px; /* Center the div and add margin */
+    font-size: 25px;
+  }
+
 .container {
     max-width: 1200px;
     margin: auto;
     padding: 20px;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.arrow img {
-    height: 25px; 
-    width: auto; 
-    cursor: pointer;
-}
-
 .product-title {
     flex: 1;
     text-align: center;
     font-size: 40px;
-    font-weight: bold;
-}
-
-.logo {
-    font-size: 20px;
     font-weight: bold;
 }
 
@@ -105,4 +140,10 @@ h1 {
     background-color: #003399;
 }
 
-/* Additional responsive design styles, color selection and quantity selector styles would be needed */
+.site-footer {
+    background-color: #0B464E;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 16px;
+  }
