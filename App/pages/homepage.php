@@ -21,19 +21,19 @@
     <div class="main-content">
         <div class="first-section">
             <h1>Best for Your Home</h1>
-            <div class="content-wrapper-1">
+            <div class="content-wrapper-1" id="content-wrapper-1">
                
             </div>
         </div>
         <div class="second-section">
             <h1>This Week's Top Sellers</h1>
-            <div class="content-wrapper-2">
+            <div class="content-wrapper-2" id="content-wrapper-2">
 
             </div>
         </div>
         <div class="third-section">
             <h1>All Deals</h1>
-            <div class="content-wrapper-3">
+            <div class="content-wrapper-3" id="content-wrapper-3">
 
             </div>
             <div class="pagination">
@@ -45,6 +45,7 @@
     <footer class="site-footer">
         <p>&copy; 2023 WIBS. All rights reserved.</p>
     </footer>
+    
     <script src="../js/homepage.js"></script>
 </body>
 </html>
