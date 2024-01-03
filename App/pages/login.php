@@ -41,7 +41,7 @@ if (isset($_POST['submit'])) {
 
 <body>
     <header class="header">
-        <a href="landing.php"><img src="../ASSETS/Back.png" alt="asdasdasd"></a>
+        <a href="index.html"><img src="../ASSETS/Back.png" alt="asdasdasd"></a>
         <div class="header-title"><img src="../ASSETS/Company Name.png" alt="pciture"></div>
     </header>
 
