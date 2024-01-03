@@ -1,11 +1,10 @@
 body {
     font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
 }
 
-/* Navbar styling from transaction page */
 .navbar {
     background-color: #0B464E;
     color: white;
@@ -13,135 +12,100 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    width: 100%;
 }
 
 .logo {
-    font-size: 48px; /* Original larger size */
+    font-size: 48px;
     font-weight: 900;
-    color: #ffffff;
 }
 
-.nav-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-.profile-name {
+.profile-name, .nav-links a {
     color: white;
-    margin-bottom: 10px; /* Space between profile name and nav links */
-    margin-right: 54px; /* Adjust this to align with the navbar's end */
-    font-size: 16px; /* Adjust font size as needed */
+    font-size: 16px;
 }
 
 .nav-links {
     display: flex;
-    padding-right: 40px; /* Adjust as necessary */
 }
 
 .nav-links a {
-    color: white;
     text-decoration: none;
     padding: 8px 15px;
-    transition: background-color 0.3s ease;
 }
 
-.nav-links a:hover {
+.nav-links a:hover, .pagination a:hover {
     background-color: #255763;
     border-radius: 4px;
 }
 
-
-/* Original styles for main content */
-.main-content {
-    max-width: 85%;
-    margin: 20px auto;
-}
-
-.section {
-    margin-bottom: 30px;
-}
-
-.content-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.content-wrapper-1, .content-wrapper-2, .content-wrapper-3 {
+    display: flex;
+    justify-content: space-evenly; 
+    flex-wrap: wrap; 
     gap: 20px;
+    padding: 20px;
 }
-
-.left-content,
-.right-content,
-.additional-content {
-    box-sizing: border-box;
-    padding: 15px;
-    background-color: #ebcdab;
+.item {
     border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
-.right-content {
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center; 
 }
 
-.left-content {
+.item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.item h2, .item p {
+    margin: 16px;
+}
+
+img {
     display: flex;
-    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    height: auto; 
+    width: auto;
+    margin-bottom: 16px;
+    min-width: 600px;
+    min-height: 600px;
+    max-width: 600px;
+    max-height: 600px;
 }
 
-.discount {
-    padding: 10px;
+.pagination a {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 8px 16px;
+    background-color: #f0f0f0;
+    color: #333;
+    text-decoration: none;
     border-radius: 5px;
-    margin-right: 10px;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.discount p {
+.pagination a.active {
+    background-color: #007bff;
     color: #fff;
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
+    border-color: #007bff;
 }
 
-.description {
-    flex-grow: 1;
-}
-
-.description p {
-    font-size: 18px;
-}
-
-button {
-    padding: 10px;
-    background-color: #0B464E;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #255763;
-}
-
-.additional-content {
-    background-color: #cce8ec;
-    margin-right: 10px;
-    flex-grow: 1;
-}
-
-.additional-content:last-child {
-    margin-right: 0;
-}
-
-/* Footer styling from transaction page */
 .site-footer {
     background-color: #0B464E;
     color: white;
     text-align: center;
     padding: 20px 0;
     font-size: 16px;
-    margin: 0; /* Remove margin */
-    width: 100%;
-    box-sizing: border-box;
-    position: relative;
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
