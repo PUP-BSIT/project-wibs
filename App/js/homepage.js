@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let totalItems = 45;
 
     function fetchItems(offset, limit) {
-        return fetch(`https://thefusionseller.online/get_item_list.php?offset=${offset}&limit=${limit}`)
+        return fetch(`https://thefusionseller.online/api_endpoints/get_item_list.php?offset=${offset}&limit=${limit}`)
             .then(response => response.json());
     }
 
