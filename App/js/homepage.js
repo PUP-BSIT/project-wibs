@@ -16,22 +16,36 @@ document.addEventListener('DOMContentLoaded', function() {
             <p>Price: ₱${item.item_price}</p>
             <img src="${item.item_image}" alt="${item.item_name}">
         `;
-        // Add click event listener to handle item click and link to product list
-        itemDiv.addEventListener('click', () => {
-            handleItemClick(item);
+        itemDiv.addEventListener('click', function() {
+            displayItemDetails(item);
         });
         return itemDiv;
     }
 
-    function handleItemClick(item) {
-        // Redirect to the product list page and pass the item ID as a query parameter
-        window.location.href = `product_list.php?item_id=${item.id}`;
+    function displayItemDetails(item) {
+        document.getElementById('sidebar-item-name').innerText = item.item_name;
+        document.getElementById('sidebar-item-price').innerText = `Price: ₱${item.item_price}`;
+        document.getElementById('sidebar-item-image').src = item.item_image;
+        document.getElementById('sidebar-item-image').alt = item.item_name;
+        document.getElementById('sidebar-item-description').innerText = item.item_description;
+
+        openSidebar();
     }
+
+    function openSidebar() {
+        document.getElementById('item-detail-sidebar').style.width = '250px';
+    }
+
+    function closeSidebar() {
+        document.getElementById('item-detail-sidebar').style.width = '0';
+    }
+
+    document.querySelector('.close-btn').addEventListener('click', closeSidebar);
 
     function displayInitialItems() {
         fetchItems(0, 5).then(data => {
-            const contentWrapper1 = document.getElementById('content-wrapper-1');
-            const contentWrapper2 = document.getElementById('content-wrapper-2');
+            const contentWrapper1 = document.querySelector('.content-wrapper-1');
+            const contentWrapper2 = document.querySelector('.content-wrapper-2');
 
             for (let i = 0; i < 2 && i < data.length; i++) {
                 contentWrapper1.appendChild(createItemDiv(data[i]));
@@ -47,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function displayAllDeals(items) {
-        const container = document.getElementById('content-wrapper-3');
+        const container = document.querySelector('.content-wrapper-3');
         container.innerHTML = ''; 
         items.forEach(item => {
             container.appendChild(createItemDiv(item));
