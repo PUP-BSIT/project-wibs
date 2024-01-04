@@ -1,14 +1,14 @@
 <?php
 
-    $conn = mysqli_connect("localhost", "root", "", "ecommerce");
+    $conn = mysqli_connect('127.0.0.1:3306','u733671518_wibs','|4Kh/3XYD','u733671518_project');
 
     if (!$conn) {
         die("Connection Failed: " . mysqli_connect_error());
     }
 
-    header("Access-Control-Allow-Origin: *");  // Allow requests from any origin
-    header("Access-Control-Allow-Methods: GET, OPTIONS");  // Allow only GET requests and OPTIONS for pre-flight
-    header("Access-Control-Allow-Headers: Content-Type");  // Allow only Content-Type header
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Methods: GET, OPTIONS");
+    header("Access-Control-Allow-Headers: Content-Type");  
 
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $sql = "SELECT * FROM purchase_orders WHERE 1";
