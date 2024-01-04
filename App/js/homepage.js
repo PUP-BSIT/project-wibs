@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const itemsPerPage = 9;
     let currentPage = 1;
-    let totalItems = 50;
+    let totalItems = 45;
 
     function fetchItems(offset, limit) {
         return fetch(`https://thefusionseller.online/get_item_list.php?offset=${offset}&limit=${limit}`)
