@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     const itemsPerPage = 9;
     let currentPage = 1;
-    let totalItems = 50;
+    let totalItems = 45;
 
     function fetchItems(offset, limit) {
-        return fetch(`https://thefusionseller.online/get_item_list.php?offset=${offset}&limit=${limit}`)
+        return fetch(`https://thefusionseller.online/api_endpoints/get_item_list.php?offset=${offset}&limit=${limit}`)
             .then(response => response.json());
     }
 
@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
         itemDiv.className = 'item';
         itemDiv.innerHTML = `
             <h2>${item.item_name}</h2>
-            <p>Price: $${item.price}</p>
-            <img src="${item.image_url}" alt="${item.item_name}">
+            <p>Price: ₱${item.item_price}</p>
+            <img src="${item.item_image}" alt="${item.item_name}">
         `;
         // Add click event listener to handle item click and link to product list
         itemDiv.addEventListener('click', () => {
