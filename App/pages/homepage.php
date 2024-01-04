@@ -11,9 +11,9 @@
     <div class="navbar">
         <div class="logo">WIBS</div>
         <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#orderstatus">Order Status</a>
-            <a href="#mycart">My Cart</a>
+            <a href="homepage.php">Home</a>
+            <a href="order_status.php">Order Status</a>
+            <a href="cart.php">My Cart</a>
         </div>
         <div class="profile-name"><strong>AJ Alejandro</strong></div>
     </div>
