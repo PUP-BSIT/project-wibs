@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
         itemDiv.className = 'item';
         itemDiv.innerHTML = `
             <h2>${item.item_name}</h2>
-            <p>Price: $${item.price}</p>
-            <img src="${item.image_url}" alt="${item.item_name}">
+            <p>Price: $${item.item_price}</p>
+            <img src="${item.item_image}" alt="${item.item_name}">
         `;
         return itemDiv;
     }
