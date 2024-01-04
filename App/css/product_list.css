@@ -115,15 +115,70 @@ h1 {
     margin-bottom: 20px;
 }
 
-.color-selection {
+/* ... existing CSS code ... */
+
+.color-selector {
     margin-bottom: 20px;
-    /* Additional styles for color selection */
+    display: flex;
+    align-items: center;
+}
+
+.color-selector span {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.color-options {
+    display: flex;
+}
+
+.color-dot {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    border: 2px solid #ddd; /* border to represent unselected state */
+}
+
+.color-dot:checked + label {
+    border-color: #000; /* border to represent selected state */
 }
 
 .quantity-selector {
+    display: flex;
+    align-items: center;
     margin-bottom: 20px;
-    /* Additional styles for quantity selector */
 }
+
+.quantity-selector span {
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.quantity-selector input {
+    text-align: center;
+    padding: 4px;
+    margin: 0 3px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 50px; /* fixed width for the number input */
+}
+
+.quantity-btn {
+    padding: 4px 8px;
+    background-color: #e1e1e1;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.quantity-btn:hover {
+    background-color: #d1d1d1;
+}
+
+/* ... existing CSS code ... */
+
 
 .add-to-cart {
     background-color: #006371;

@@ -16,8 +16,31 @@ document.addEventListener('DOMContentLoaded', function() {
             <p>Price: ₱${item.item_price}</p>
             <img src="${item.item_image}" alt="${item.item_name}">
         `;
+        itemDiv.addEventListener('click', function() {
+            displayItemDetails(item);
+        });
         return itemDiv;
     }
+
+    function displayItemDetails(item) {
+        document.getElementById('sidebar-item-name').innerText = item.item_name;
+        document.getElementById('sidebar-item-price').innerText = `Price: ₱${item.item_price}`;
+        document.getElementById('sidebar-item-image').src = item.item_image;
+        document.getElementById('sidebar-item-image').alt = item.item_name;
+        document.getElementById('sidebar-item-description').innerText = item.item_description;
+
+        openSidebar();
+    }
+
+    function openSidebar() {
+        document.getElementById('item-detail-sidebar').style.width = '250px';
+    }
+
+    function closeSidebar() {
+        document.getElementById('item-detail-sidebar').style.width = '0';
+    }
+
+    document.querySelector('.close-btn').addEventListener('click', closeSidebar);
 
     function displayInitialItems() {
         fetchItems(0, 5).then(data => {
