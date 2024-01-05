@@ -149,3 +149,11 @@ img {
     justify-content: center;
     margin-bottom: 20px;
 }
+
+.quantity-selector {
+    margin: 10px 0;
+}
+
+.quantity-selector label, .quantity-selector input {
+    margin-right: 5px;
+}
