@@ -28,9 +28,22 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('sidebar-item-image').src = item.item_image;
         document.getElementById('sidebar-item-image').alt = item.item_name;
         document.getElementById('sidebar-item-description').innerText = item.item_description;
+        document.getElementById('quantity').value = 1; // Reset quantity to 1
 
         openSidebar();
     }
+
+    function addToCart(item) {
+        const quantity = document.getElementById('quantity').value;
+        console.log(`Adding ${quantity} of ${item.item_name} to cart`);
+        // Here, add your logic to handle adding the item to the cart
+    }
+
+    document.getElementById('add-to-cart-btn').addEventListener('click', function() {
+        const selectedItemName = document.getElementById('sidebar-item-name').innerText;
+        const selectedItem = { item_name: selectedItemName }; // You might need to adjust this to get the full item details
+        addToCart(selectedItem);
+    });
 
     function openSidebar() {
         document.getElementById('item-detail-sidebar').style.width = '250px';
