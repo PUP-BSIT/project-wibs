@@ -32,8 +32,27 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function addToCart(item) {
-        const quantity = document.querySelector('#quantity').value;
-        console.log(`Adding ${quantity} of ${item.item_name} to cart`);
+        const quantity = document.getElementById('quantity').value;
+        const userId = getUserId();
+    
+        fetch('cart.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                item_id: item.id, 
+                quantity: quantity,
+                user_id: userId,
+            }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Item added to cart:', data);
+        })
+        .catch(error => {
+            console.error('Error adding item to cart:', error);
+        });
     }
 
     document.querySelector('#add_to_cart_btn').addEventListener('click', function() {
