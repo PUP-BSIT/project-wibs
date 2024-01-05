@@ -18,6 +18,22 @@
         <div class="profile-name"><strong>AJ Alejandro</strong></div>
     </div>
 
+    <div id="item-detail-sidebar" class="item-detail-sidebar">
+        <div class="item-detail-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="sidebar-item-name"></h2>
+            <img id="sidebar-item-image" src="" alt="">
+            <p id="sidebar-item-price"></p>
+            <p id="sidebar-item-description"></p>
+        <div class="quantity-selector">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="99" value="1">
+        </div>
+        <button id="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <button id="add-to-cart-btn">Add to Cart</button>
+    </div>
+    
     <div class="main-content">
         <div class="first-section">
             <h1>Best for Your Home</h1>
