@@ -41,7 +41,6 @@
             </div>
         </main>
     </div>
-
     <footer class="site-footer">
         <p>&copy; 2023 WIBS. All rights reserved.</p>
     </footer>

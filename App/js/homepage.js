@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         return itemDiv;
     }
-
+    
     function displayInitialItems() {
         fetchItems(0, 5).then(data => {
             const contentWrapper1 = document.querySelector('.content-wrapper-1');
