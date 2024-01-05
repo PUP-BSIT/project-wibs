@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 </head>
 <body>
+    <div class="overlay"></div>
     <div class="navbar">
         <div class="logo">WIBS</div>
         <div class="nav-links">
@@ -18,20 +19,21 @@
         <div class="profile-name"><strong>AJ Alejandro</strong></div>
     </div>
 
-    <div id="item-detail-sidebar" class="item-detail-sidebar">
+    <div id="item_detail_popup" class="item-detail-popup">
+        <div class="popup-image">
+            <img id="popup_item_image" src="">
+        </div>
         <div class="item-detail-content">
             <span class="close-btn">&times;</span>
-            <h2 id="sidebar-item-name"></h2>
-            <img id="sidebar-item-image" src="" alt="">
-            <p id="sidebar-item-price"></p>
-            <p id="sidebar-item-description"></p>
-        <div class="quantity-selector">
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" min="1" max="99" value="1">
+            <h2 id="popup_item_name"></h2>
+            <p id="popup_item_price"></p>
+            <p id="popup_item_description"></p>
+            <div class="quantity-selector">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="99" value="1">
+            </div>
+            <button id="add_to_cart_btn">Add to Cart</button> 
         </div>
-        <button id="add-to-cart-btn">Add to Cart</button>
-        </div>
-        <button id="add-to-cart-btn">Add to Cart</button>
     </div>
     
     <div class="main-content">
