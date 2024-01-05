@@ -1,0 +1,147 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+/* Navbar styling from transaction page */
+.navbar {
+    background-color: #0B464E;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.logo {
+    font-size: 48px; /* Original larger size */
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.profile-name {
+    color: white;
+    margin-bottom: 10px; /* Space between profile name and nav links */
+    margin-right: 54px; /* Adjust this to align with the navbar's end */
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+.nav-links {
+    display: flex;
+    padding-right: 40px; /* Adjust as necessary */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #255763;
+    border-radius: 4px;
+}
+
+
+/* Original styles for main content */
+.main-content {
+    max-width: 85%;
+    margin: 20px auto;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.left-content,
+.right-content,
+.additional-content {
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: #ebcdab;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.right-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.left-content {
+    display: flex;
+    align-items: center;
+}
+
+.discount {
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.discount p {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.description {
+    flex-grow: 1;
+}
+
+.description p {
+    font-size: 18px;
+}
+
+button {
+    padding: 10px;
+    background-color: #0B464E;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #255763;
+}
+
+.additional-content {
+    background-color: #cce8ec;
+    margin-right: 10px;
+    flex-grow: 1;
+}
+
+.additional-content:last-child {
+    margin-right: 0;
+}
+
+/* Footer styling from transaction page */
+.site-footer {
+    background-color: #0B464E;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 16px;
+    margin: 0; /* Remove margin */
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
