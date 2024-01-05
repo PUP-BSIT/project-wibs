@@ -23,37 +23,36 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function displayItemDetails(item) {
-        document.getElementById('sidebar-item-name').innerText = item.item_name;
-        document.getElementById('sidebar-item-price').innerText = `Price: ₱${item.item_price}`;
-        document.getElementById('sidebar-item-image').src = item.item_image;
-        document.getElementById('sidebar-item-image').alt = item.item_name;
-        document.getElementById('sidebar-item-description').innerText = item.item_description;
-        document.getElementById('quantity').value = 1; // Reset quantity to 1
+        document.querySelector('#popup_item_name').innerText = item.item_name;
+        document.querySelector('#popup_item_price').innerText = `Price: ₱${item.item_price}`;
+        document.querySelector('#popup_item_image').src = item.item_image;
+        document.querySelector('#popup_item_description').innerText = item.item_description;
 
-        openSidebar();
+        openPopup();
     }
 
     function addToCart(item) {
-        const quantity = document.getElementById('quantity').value;
+        const quantity = document.querySelector('#quantity').value;
         console.log(`Adding ${quantity} of ${item.item_name} to cart`);
-        // Here, add your logic to handle adding the item to the cart
     }
 
-    document.getElementById('add-to-cart-btn').addEventListener('click', function() {
-        const selectedItemName = document.getElementById('sidebar-item-name').innerText;
-        const selectedItem = { item_name: selectedItemName }; // You might need to adjust this to get the full item details
+    document.querySelector('#add_to_cart_btn').addEventListener('click', function() {
+        const selectedItemName = document.querySelector('#popup_item_name').innerText;
+        const selectedItem = { item_name: selectedItemName };
         addToCart(selectedItem);
     });
 
-    function openSidebar() {
-        document.getElementById('item-detail-sidebar').style.width = '250px';
+    function openPopup() {
+        document.querySelector('.overlay').classList.add('visible');
+        document.querySelector('#item_detail_popup').classList.add('open');
+    }
+    
+    function closePopup() {
+        document.querySelector('.overlay').classList.remove('visible');
+        document.querySelector('#item_detail_popup').classList.remove('open');
     }
 
-    function closeSidebar() {
-        document.getElementById('item-detail-sidebar').style.width = '0';
-    }
-
-    document.querySelector('.close-btn').addEventListener('click', closeSidebar);
+    document.querySelector('.close-btn').addEventListener('click', closePopup);
 
     function displayInitialItems() {
         fetchItems(0, 5).then(data => {
