@@ -1,23 +1,30 @@
 <?php
-session_start();
+// Connect to the database
+$conn = mysqli_connect('localhost', 'root', '', 'u733671518_project');
 
-$conn = mysqli_connect('127.0.0.1:3306','u733671518_wibs','|4Kh/3XYD','u733671518_project');
-
-function getCartItems($userId, $conn) {
-    $query = "SELECT cart_items.id, items.item_name, items.item_price, cart_items.quantity
-              FROM cart_items
-              JOIN items ON cart_items.item_id = items.id
-              WHERE cart_items.user_id = :user_id";
-    
-    $stmt = $conn->prepare($query);
-    $stmt->bindParam(':user_id', $userId);
-    $stmt->execute();
-
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
-$cartItems = getCartItems($userId, $conn);
+// Check if the required POST values are set
+if (isset($_POST['item_name'], $_POST['quantity'], $_POST['item_price'], $_POST['item_image'])) {
+    // Get data from the client-side
+    $item_name = $_POST['item_name'];
+    $quantity = $_POST['quantity'];
+    $item_price = $_POST['item_price'];
+    $item_image = $_POST['item_image'];
+
+    // Insert data into the database
+    $sql = "INSERT INTO cart (item_name, quantity, item_price, item_image) VALUES ('$item_name', $quantity, $item_price, '$item_image')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Item added to cart successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,29 +41,37 @@ $cartItems = getCartItems($userId, $conn);
 
     <div class="main">
         <div class="cart-items">
-            <?php foreach ($cartItems as $cartItem): ?>
-                <div class="item">
-                    <div class="item-image1">
-                      
-                    </div>
-                    <div class="item-info">
-                        <h2><?php echo $cartItem['item_name']; ?></h2>
-                        <p>Price: ₱<?php echo $cartItem['item_price']; ?></p>
-                        <p>Quantity: <?php echo $cartItem['quantity']; ?></p>
-                        
+        <?php
+            // Fetch cart items from the database
+            $sql = "SELECT * FROM cart";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                // Display cart items
+                while ($row = $result->fetch_assoc()) {
+                    echo '<div class="item">';
+                    echo '<div class="item-info">';
+                    echo '<p>Item Name: ' . $row['item_name'] . '</p>';
+                    echo '<p>Quantity: ' . $row['quantity'] . '</p>';
+                    echo '<p>Price: ₱' . $row['item_price'] . '</p>'; // Display item price
+                    echo '<img src="' . $row['item_image'] . '" alt="Item Image">'; // Display item image
+                    // Add other details as needed
+                    echo '</div>';
+                    echo '<div class="remove-button">';
+                    echo '<button type="button">Remove</button>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+            } else {
+                echo '<p>Your cart is empty.</p>';
+            }
 
-                        <div class="remove-button">
-                            <button type="button" onclick="removeItem(<?php echo $cartItem['id']; ?>)">Remove</button>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
+            $conn->close();
+            ?>
         </div>
         
         <div class="order-summary">
-
             <div class="order-form">
-                <button type="submit" onclick="placeOrder()">Place Order</button>
+                <button type="submit">Place Order</button>
             </div>
         </div>
     </div>
@@ -65,14 +80,7 @@ $cartItems = getCartItems($userId, $conn);
         <p>&copy; 2023 WIBS. All rights reserved.</p>
     </footer>
 
-    <script src="../js/homepage.js">
-        function removeItem(itemId) {
-            console.log('Removing item with ID:', itemId);
-        }
-
-        function placeOrder() {
-            console.log('Placing order');
-        }
+    <script>
     </script>
 </body>
 </html>
