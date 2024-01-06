@@ -13,12 +13,6 @@
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $sql = "SELECT * FROM purchase_orders WHERE 1";
 
-        // Check and apply filters if provided
-        if(isset($_GET['seller_id'])) {
-            $sellerId = $_GET['seller_id'];
-            $sql .= " AND seller_id = $sellerId";
-        }
-
         if(isset($_GET['status'])) {
             $status = $_GET['status'];
             $sql .= " AND status = $status";
