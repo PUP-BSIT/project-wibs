@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+// Check if the user is logged in, if not then redirect to login page
+if (!isset($_SESSION['user_name'])) {
+    header("Location: login.php"); // Adjust the path as necessary
+    exit;
+}
+
+// Accessing the username from the session variable
+$username = $_SESSION['user_name'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

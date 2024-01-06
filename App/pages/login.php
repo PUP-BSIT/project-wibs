@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
 
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_array($result);
-        $_SESSION['user_name'] = $row['name'];
+        $_SESSION['user_name'] = $row['email'];
         header('location:homepage.php');
         exit();
     } else {
@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/login_styles.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
-    <title>WIBS Login</title>
+    <title>WIBS Sign in</title>
 </head>
 
 <body>
