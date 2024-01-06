@@ -1,10 +1,21 @@
 <?php
 // Connect to the database
-$conn = mysqli_connect('localhost', 'root', '', 'u733671518_project');
+$conn = mysqli_connect('127.0.0.1:3306','u733671518_wibs','|4Kh/3XYD','u733671518_project');
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
+session_start();
+
+// Check if the user is logged in, if not then redirect to login page
+if (!isset($_SESSION['user_name'])) {
+    header("Location: login.php"); // Adjust the path as necessary
+    exit;
+}
+
+// Accessing the username from the session variable
+$username = $_SESSION['user_name'];
 
 // Check if the required POST values are set
 if (isset($_POST['item_name'], $_POST['quantity'], $_POST['item_price'], $_POST['item_image'])) {
