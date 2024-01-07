@@ -31,8 +31,7 @@
             } else {
                 echo "Error: " . $conn->error;
             }
-        }
-        
+        }        
 
         // Check if the required POST values are set
         if (isset($_POST['item_id'], $_POST['item_name'], $_POST['quantity'], $_POST['item_price'], $_POST['item_image'])) {
@@ -79,11 +78,16 @@
                         while ($row = $result->fetch_assoc()) {
                             echo '<form class="item" action="" method="post">';
                             echo '<input type="hidden" name="cart_id" value="' . $row['cart_id'] . '">';
-                            echo '<div class="item-info">...</div>';
-                            echo '<div class="remove-button">';
-                            echo '<button type="submit" name="remove_item">Remove</button>'; // Added name attribute
+                            echo '<div class="item-info">';
+                            echo '<p>Item Name: ' . $row['item_name'] . '</p>';
+                            echo '<p>Quantity: ' . $row['quantity'] . '</p>';
+                            echo '<p>Price: ₱' . $row['item_price'] . '</p>';
+                            echo '<img src="' . $row['item_image'] . '" alt="Item Image">';
                             echo '</div>';
-                            echo '</form>';                             
+                            echo '<div class="remove-button">';
+                            echo '<button type="submit" name="remove_item" onclick="return confirmRemove()">Remove</button>';
+                            echo '</div>';
+                            echo '</form>'; 
                         }
                     } else {
                         echo '<p>Your cart is empty.</p>';
