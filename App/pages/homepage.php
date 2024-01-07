@@ -42,8 +42,13 @@ $stmt->close();
             <a href="order_status.php">Order Status</a>
             <a href="cart.php">My Cart<?php if ($hasCartItems) echo '<span class="red-dot"></span>'; ?></a>
         </div>
-        <div class="profile-name"><strong><?php echo $username
-        ?></strong></div>
+        <div class="profile-name">
+            <strong><?php echo $username?></strong>
+            |
+            <form action="logout.php" method="post">
+                <input type="submit" value="Logout">
+            </form>
+        </div>
     </div>
     <div id="item_detail_popup" class="item-detail-popup">
         <div class="popup-image">
