@@ -73,6 +73,10 @@ $username = $_SESSION['user_name'];
             </div>
         </div>
     </div>
+    
+    <div id="customAlert" class="custom-alert">
+    <p id="alertMessage"></p>
+</div>
 
     <footer class="site-footer">
         <p>&copy; 2023 WIBS. All rights reserved.</p>

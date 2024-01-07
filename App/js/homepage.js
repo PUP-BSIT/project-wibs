@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const itemPrice = item.item_price;
         const itemImage = item.item_image;
         const itemId = item.item_id;
-
+    
         // Check if the values are defined
         if (itemName !== undefined && itemPrice !== undefined && itemImage !== undefined) {
             // Create a FormData object to send data to the server
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
             formData.append('item_price', itemPrice);
             formData.append('item_image', itemImage);
             formData.append('item_id', itemId);
-
+    
             // Log FormData contents
             console.log('FormData:', formData);
     
@@ -62,11 +62,22 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.text())
             .then(data => {
                 console.log(data);
-                // Handle the response as needed
+                showAlert(`Successfully added ${quantity} x ${itemName} to your cart.`);
             })
             .catch(error => console.error('Error:', error));
-        } else {
-            console.error('Error: Item details are undefined');
+        }
+        
+        function showAlert(message) {
+            const alertBox = document.getElementById('customAlert');
+            const alertMessage = document.getElementById('alertMessage');
+        
+            alertMessage.innerText = message;
+            alertBox.classList.add('show');
+        
+            // Hide the alert after 3 seconds
+            setTimeout(() => {
+                alertBox.classList.remove('show');
+            }, 3000);
         }
     }
     
@@ -74,8 +85,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const selectedItemName = document.querySelector('#popup_item_name').innerText;
         const selectedItemPrice = parseFloat(document.querySelector('#popup_item_price').innerText.replace('Price: ₱', ''));
         const selectedItemImage = document.querySelector('#popup_item_image').src;
-        const selectedItemID = document.querySelector('.item-id').innerText; // Replace '.item-id' with the correct selector
-
+        const selectedItemID = document.querySelector('.item-id').innerText; 
+    
         const selectedItem = {
             item_name: selectedItemName,
             item_price: selectedItemPrice,
