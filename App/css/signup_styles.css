@@ -25,7 +25,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 100px;
-  
+  padding-bottom: 0px;
 }
 
 .content-image img {
@@ -39,6 +39,13 @@ body {
   padding: 20px;
 }
 
+.form-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
 .form-group {
   margin-bottom: 15px;
 }
@@ -48,8 +55,15 @@ body {
   margin-bottom: 5px;
 }
 
-.form-group input[type="text"],
-.form-group input[type="password"] {
+.form-group #firstname, #lastname, #username, #email, #password, #confirm_password {
+  width: 460px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group #address {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
@@ -95,6 +109,11 @@ body {
 footer {
     display: flex;
     flex-direction: row-reverse;
+}
+
+footer img {
+  max-width: 180px;
+  max-height: 205px;
 }
 
 
