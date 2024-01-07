@@ -21,6 +21,7 @@ if (isset($_POST['submit'])) {
         $row = mysqli_fetch_array($result);
         $_SESSION['user_id'] = $row['customer_id'];
         $_SESSION['user_name'] = $row['name'];
+        $_SESSION['delivery_address'] = $row['address'];
         header('location:homepage.php');
         exit();
     } else {
