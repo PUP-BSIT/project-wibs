@@ -14,6 +14,28 @@ body {
     padding: 10px 20px;
 }
 
+.profile-name {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.profile-name form {
+    display: inline;
+}
+
+.profile-name input[type="submit"] {
+    background-color: #f4433600;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-left: 10px;
+}
+
+.profile-name input[type="submit"]:hover {
+    color: red;
+}
+
 .logo {
     font-size: 48px;
     font-weight: 900;
