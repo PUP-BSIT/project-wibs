@@ -75,9 +75,10 @@ body {
 .cart-items .item {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #000;
     margin-bottom: 10px;
     padding: 30px;
+    background-color: #EEEEEE;
 }
   
 .cart-items .item img {
