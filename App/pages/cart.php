@@ -1,6 +1,7 @@
 <?php
 // Connect to the database
 $conn = mysqli_connect('127.0.0.1:3306','u733671518_wibs','|4Kh/3XYD','u733671518_project');
+#$conn = mysqli_connect('localhost','root','','u733671518_project');
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -26,8 +27,8 @@ if (isset($_POST['item_name'], $_POST['quantity'], $_POST['item_price'], $_POST[
     $item_price = $_POST['item_price'];
     $item_image = $_POST['item_image'];
 
-    // Insert data into the database
-    $sql = "INSERT INTO cart (item_name, quantity, item_price, item_image) VALUES ('$item_name', $quantity, $item_price, '$item_image')";
+    // Insert data into the database including user_id
+    $sql = "INSERT INTO cart (user_id, item_name, quantity, item_price, item_image) VALUES ('$userid', '$item_name', $quantity, $item_price, '$item_image')";
 
     if ($conn->query($sql) === TRUE) {
         echo "Item added to cart successfully";
