@@ -34,15 +34,17 @@ if (isset($_POST['remove_item']) && isset($_POST['cart_id'])) {
 }
 
 // Check if the required POST values are set
-if (isset($_POST['item_name'], $_POST['quantity'], $_POST['item_price'], $_POST['item_image'])) {
+if (isset($_POST['item_id'], $_POST['item_name'], $_POST['quantity'], $_POST['item_price'], $_POST['item_image'])) {
     // Get data from the client-side
+    $item_id = $_POST['item_id']; // Add this line
     $item_name = $_POST['item_name'];
     $quantity = $_POST['quantity'];
     $item_price = $_POST['item_price'];
     $item_image = $_POST['item_image'];
 
-    // Insert data into the database including user_id
-    $sql = "INSERT INTO cart (user_id, item_name, quantity, item_price, item_image) VALUES ('$userid', '$item_name', $quantity, $item_price, '$item_image')";
+    // Insert data into the database including user_id and item_id
+    $sql = "INSERT INTO cart (user_id, item_id, item_name, quantity, item_price, item_image) VALUES ('$userid', '$item_id', '$item_name', $quantity, $item_price, '$item_image')";
+
 
     if ($conn->query($sql) === TRUE) {
         echo "Item added to cart successfully";
