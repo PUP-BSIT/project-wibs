@@ -8,6 +8,7 @@ if (!isset($_SESSION['user_name'])) {
 }
 
 // Accessing the username from the session variable
+$userid = $_SESSION['user_id'];
 $username = $_SESSION['user_name'];
 ?>
 
@@ -29,9 +30,9 @@ $username = $_SESSION['user_name'];
             <a href="order_status.php">Order Status</a>
             <a href="cart.php">My Cart</a>
         </div>
-        <div class="profile-name"><strong>AJ Alejandro</strong></div>
+        <div class="profile-name"><strong><?php echo $username
+        ?></strong></div>
     </div>
-
     <div id="item_detail_popup" class="item-detail-popup">
         <div class="popup-image">
             <img id="popup_item_image" src="">
