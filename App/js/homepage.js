@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <h2>${item.item_name}</h2>
             <p>Price: ₱${item.item_price}</p>
             <img src="${item.item_image}" alt="${item.item_name}">
+            <div class="item-id" style="display: none;">${item.item_id}</div>
         `;
         itemDiv.addEventListener('click', function() {
             displayItemDetails(item);
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('#popup_item_price').innerText = `Price: ₱${item.item_price}`;
         document.querySelector('#popup_item_image').src = item.item_image;
         document.querySelector('#popup_item_description').innerText = item.item_description;
-
+        document.querySelector('.item-id').innerText = item.item_id;
         openPopup();
     }
 
@@ -38,7 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const itemName = item.item_name;
         const itemPrice = item.item_price;
         const itemImage = item.item_image;
-    
+        const itemId = item.item_id;
+
         // Check if the values are defined
         if (itemName !== undefined && itemPrice !== undefined && itemImage !== undefined) {
             // Create a FormData object to send data to the server
@@ -47,7 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
             formData.append('quantity', quantity);
             formData.append('item_price', itemPrice);
             formData.append('item_image', itemImage);
-    
+            formData.append('item_id', itemId);
+
             // Log FormData contents
             console.log('FormData:', formData);
     
@@ -71,11 +74,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const selectedItemName = document.querySelector('#popup_item_name').innerText;
         const selectedItemPrice = parseFloat(document.querySelector('#popup_item_price').innerText.replace('Price: ₱', ''));
         const selectedItemImage = document.querySelector('#popup_item_image').src;
-        
+        const selectedItemID = document.querySelector('.item-id').innerText; // Replace '.item-id' with the correct selector
+
         const selectedItem = {
             item_name: selectedItemName,
             item_price: selectedItemPrice,
-            item_image: selectedItemImage
+            item_image: selectedItemImage,
+            item_id: selectedItemID
         };
     
         addToCart(selectedItem);
