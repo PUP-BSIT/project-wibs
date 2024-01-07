@@ -15,6 +15,7 @@ if (!isset($_SESSION['user_name'])) {
 }
 
 // Accessing the username from the session variable
+$userid = $_SESSION['user_id'];
 $username = $_SESSION['user_name'];
 
 // Check if the required POST values are set

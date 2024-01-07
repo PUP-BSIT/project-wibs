@@ -1,8 +1,8 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-$conn = mysqli_connect('127.0.0.1:3306','u733671518_wibs','|4Kh/3XYD','u733671518_project');
-
+#$conn = mysqli_connect('127.0.0.1:3306','u733671518_wibs','|4Kh/3XYD','u733671518_project');
+$conn = mysqli_connect('localhost','root','','u733671518_project');
 session_start();
 
 $errors = array();
@@ -19,7 +19,8 @@ if (isset($_POST['submit'])) {
 
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_array($result);
-        $_SESSION['user_name'] = $row['email'];
+        $_SESSION['user_id'] = $row['customer_id'];
+        $_SESSION['user_name'] = $row['name'];
         header('location:homepage.php');
         exit();
     } else {
