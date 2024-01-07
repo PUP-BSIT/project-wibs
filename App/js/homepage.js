@@ -1,3 +1,4 @@
+let cartItemCount = 0;
 document.addEventListener('DOMContentLoaded', function() {
     const itemsPerPage = 9;
     let currentPage = 1;
@@ -62,25 +63,44 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.text())
             .then(data => {
                 console.log(data);
-                showAlert(`Successfully added ${quantity} x ${itemName} to your cart.`);
+                showAlert(`Successfully added ${quantity} x ${itemName} to your cart.`);  
+                updateCartIconWithRedDot(); 
+                closePopup();
             })
             .catch(error => console.error('Error:', error));
         }
-        
+
+        function updateCartIconWithRedDot() {
+            const cartLink = document.querySelector('.nav-links a[href="cart.php"]');
+            if (!cartLink.querySelector('.red-dot')) {
+                const redDot = document.createElement('span');
+                redDot.className = 'red-dot';
+                cartLink.appendChild(redDot);
+            }
+        }
+    
         function showAlert(message) {
             const alertBox = document.getElementById('customAlert');
             const alertMessage = document.getElementById('alertMessage');
+            const overlay = document.querySelector('.overlay');
         
             alertMessage.innerText = message;
             alertBox.classList.add('show');
+            overlay.classList.add('visible'); // Make overlay visible
         
-            // Hide the alert after 3 seconds
+            // Hide the alert and overlay after 3 seconds
             setTimeout(() => {
                 alertBox.classList.remove('show');
+                overlay.classList.remove('visible');
             }, 3000);
         }
     }
     
+    document.querySelector('.close-alert').addEventListener('click', function() {
+        document.getElementById('customAlert').classList.remove('show');
+        document.querySelector('.overlay').classList.remove('visible');
+    });
+
     document.querySelector('#add_to_cart_btn').addEventListener('click', function() {
         const selectedItemName = document.querySelector('#popup_item_name').innerText;
         const selectedItemPrice = parseFloat(document.querySelector('#popup_item_price').innerText.replace('Price: ₱', ''));
@@ -97,7 +117,6 @@ document.addEventListener('DOMContentLoaded', function() {
         addToCart(selectedItem);
     });
     
-
     function openPopup() {
         document.querySelector('.overlay').classList.add('visible');
         document.querySelector('#item_detail_popup').classList.add('open');
