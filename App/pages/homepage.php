@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$conn = mysqli_connect('localhost','root','','u733671518_project');
 // Check if the user is logged in, if not then redirect to login page
 if (!isset($_SESSION['user_name'])) {
     header("Location: login.php"); // Adjust the path as necessary
@@ -10,6 +10,17 @@ if (!isset($_SESSION['user_name'])) {
 // Accessing the username from the session variable
 $userid = $_SESSION['user_id'];
 $username = $_SESSION['user_name'];
+
+$cartQuery = "SELECT COUNT(*) FROM cart WHERE user_id = ?";
+$stmt = $conn->prepare($cartQuery);
+$stmt->bind_param("i", $userid);
+$stmt->execute();
+$stmt->store_result();
+$stmt->bind_result($cartCount);
+$stmt->fetch();
+$hasCartItems = $cartCount > 0;
+$stmt->close();
+
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +39,7 @@ $username = $_SESSION['user_name'];
         <div class="nav-links">
             <a href="homepage.php">Home</a>
             <a href="order_status.php">Order Status</a>
-            <a href="cart.php">My Cart</a>
+            <a href="cart.php">My Cart<?php if ($hasCartItems) echo '<span class="red-dot"></span>'; ?></a>
         </div>
         <div class="profile-name"><strong><?php echo $username
         ?></strong></div>
@@ -72,6 +83,11 @@ $username = $_SESSION['user_name'];
 
             </div>
         </div>
+    </div>
+    
+    <div id="customAlert" class="custom-alert">
+    <span class="close-alert">&times;</span>
+    <p id="alertMessage"></p>
     </div>
 
     <footer class="site-footer">
