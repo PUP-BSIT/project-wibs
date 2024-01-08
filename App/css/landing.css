@@ -7,7 +7,7 @@ html, body {
 }
 
 body {
-    background: url('../ASSETS/landing.svg');
+    background: url('../App/ASSETS/landing.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
