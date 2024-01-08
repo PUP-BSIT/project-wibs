@@ -1,6 +1,6 @@
 <?php
-$conn = mysqli_connect('127.0.0.1:3306','u733671518_wibs','|4Kh/3XYD','u733671518_project');
-#$conn = mysqli_connect('localhost','root','','u733671518_project');
+#$conn = mysqli_connect('127.0.0.1:3306','u733671518_wibs','|4Kh/3XYD','u733671518_project');
+$conn = mysqli_connect('localhost','root','','u733671518_project');
 $error = array();
 
 if (isset($_POST['submit'])) {
@@ -12,6 +12,9 @@ if (isset($_POST['submit'])) {
   $pass = md5($_POST['password']);
   $cpass = md5($_POST['confirm_password']);
   $address = mysqli_real_escape_string($conn, $_POST['address']);
+  $mobile_num = mysqli_real_escape_string($conn, $_POST['mobile_num']);
+  $vrzn_num = mysqli_real_escape_string($conn, $_POST['vrzn_num']);
+  $apex_num = mysqli_real_escape_string($conn, $_POST['apex_num']);
 
   $select = "SELECT * FROM customer WHERE email = '$email'";
 
@@ -23,7 +26,7 @@ if (isset($_POST['submit'])) {
     if ($pass != $cpass) {
       $error[] = 'Passwords do not match!';
     } else {
-      $insert = "INSERT INTO customer(firstname, lastname, name, email, password, address) VALUES('$firstname', '$lastname', '$name', '$email', '$pass', '$address')";
+      $insert = "INSERT INTO customer(firstname, lastname, name, email, password, address, mobile_num, vrzn_num, apex_num) VALUES('$firstname', '$lastname', '$name', '$email', '$pass', '$address', '$mobile_num', '$vrzn_num', '$apex_num')";
       mysqli_query($conn, $insert);
       header('location:login.php');
       exit;
@@ -102,9 +105,28 @@ if (isset($_POST['submit'])) {
           </div>
         </div>
 
-        <div class="form-group">
-          <label for="address">Address</label>
-          <input type="text" id="address" name="address" placeholder="Input Address" />
+        <div class="form-row">
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" placeholder="Input Address" />
+          </div>
+
+          <div class="form-group">
+            <label for="mobile_num">Mobile Number</label>
+            <input type="number" id="mobile_num" name="mobile_num" placeholder="Input Number" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="vrzn_num">VRZN Bank</label>
+            <input type="number" id="vrzn_num" name="vrzn_num" placeholder="Input VRZN Bank Account Number" />
+          </div>
+
+          <div class="form-group">
+            <label for="apex_num">APEX Bank</label>
+            <input type="number" id="apex_num" name="apex_num" placeholder="Input VRZN Bank Account Number" />
+          </div>
         </div>
 
         <div class="form-group">
