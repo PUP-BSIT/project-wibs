@@ -1,10 +1,18 @@
-body {
+html, body {
     margin: 0;
-    font-family: Montserrat, sans-serif;
-    background: url('../ASSETS/landing_bg.png') no-repeat center center fixed;
-    background-size: cover;
+    padding: 0;
+    overflow: hidden; /* This will disable scrolling */
+    height: 100%; /* This ensures that the body takes up the full viewport height */
+    width: 100%; /* This ensures that the body takes up the full viewport width */
 }
 
+body {
+    background: url('../App/ASSETS/landing.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
 #container {
     display: flex;
     flex-direction: column;
@@ -13,70 +21,32 @@ body {
     height: 100vh;
 }
 
+/* ... additional CSS styles ... */
+
+
 #content {
     text-align: right;
     margin-right: 20px;
 }
 
-#wibs_logo {
-    width: 143px;
-    height: 59px;
-    color: #006371;
-    font-size: 48px;
-    font-weight: 900;
-    margin-top: 10px;
-    position: absolute;
-    right: 20px;
-    top: 10px;
-}
-
-#hero_line {
-    width: 533px;
-    height: 429.09px;
-    color: #141414;
-    font-size: 88px;
-    font-weight: 700;
-    text-align: right;
-    line-height: 1.2;
-    margin-top: 80px; 
-}
-
-#hero_line p {
-    margin: 0;
-}
-
-#tag_line {
-    width: 531px;
-    height: 47px;
-    color: #006371;
-    font-family: Cambria, serif;
-    font-size: 40px;
-    font-weight: 400;
-    text-align: right;
-    margin-bottom: 20px;
-    margin-top: 0px;
-}
-
 #get_started_button {
-    width: 358px;
-    height: 104px;
-    background: #0b464e;
+    width: 358px; /* Width of the button */
+    height: 104px; /* Height of the button */
+    background: #0b464e; /* Background color of the button */
     border: none;
-    border-radius: 15px; 
+    border-radius: 52px; /* Half the height will make it a perfect pill shape */
     box-shadow: -3px 4px 2px 4px rgba(100, 100, 100, 0.5);
-    align-self: center;
-    margin-bottom: 100px;
+    position: absolute; /* Positioning it absolutely to the top right corner */
+    top: 85px; /* Adjust the space from the top */
+    right: 125px; /* Adjust the space from the right */
     text-decoration: none;  
-}       
+}
 
 #get_started_text {
-    width: 208px;
-    height: 65px;
-    color: #ffffff;
+    color: #ffffff; /* Text color */
     font-family: Poppins, sans-serif;
-    font-size: 36px;
+    font-size: 30px; /* Font size */
     font-weight: 600;
-    text-align: center;
-    margin: auto;
-    margin-top: 25px;
+    line-height: 104px; /* This should match your button height to vertically center the text */
+    text-align: center; /* Center the text horizontally */
 }
