@@ -55,16 +55,8 @@ body {
   margin-bottom: 5px;
 }
 
-.form-group #firstname, #lastname, #username, #email, #password, #confirm_password {
+.form-group #firstname, #lastname, #username, #email, #password, #confirm_password, #address, #mobile_num, #vrzn_num, #apex_num {
   width: 460px;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.form-group #address {
-  width: 100%;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
