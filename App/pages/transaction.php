@@ -1,14 +1,28 @@
 <?php
 session_start();
+$conn = mysqli_connect('localhost', 'root', '', 'u733671518_project'); // Replace with your database details
 
-// Check if the user is logged in, if not then redirect to login page
 if (!isset($_SESSION['user_name'])) {
-    header("Location: login.php"); // Adjust the path as necessary
+    header("Location: login.php");
     exit;
 }
 
-// Accessing the username from the session variable
 $username = $_SESSION['user_name'];
+$userid = $_SESSION['user_id'];
+
+// Handle form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['final_confirm'])) {
+    // Perform transaction logic here (e.g., save transaction details to database)
+    // ...
+
+    // Clear the cart after transaction confirmation
+    $sql_clear_cart = "DELETE FROM cart WHERE user_id = '$userid'";
+    $conn->query($sql_clear_cart);
+
+    // Redirect to order status page
+    header("Location: order_status.php");
+    exit;
+}
 ?>
 
 
@@ -16,10 +30,8 @@ $username = $_SESSION['user_name'];
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transaction Page</title>
     <link rel="stylesheet" href="../css/transaction_styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 </head>
 <body>
 
@@ -34,38 +46,39 @@ $username = $_SESSION['user_name'];
     </div>
 
     <div class="transaction-text">
-      <h1>Complete your Transaction</h1>
+        <h1>Complete your Transaction</h1>
     </div>
 
     <div class="main-container">
         <div class="transaction-container">
             <div class="form-and-notes-container">
-                <form id="transactionForm" class="transaction-form">
+                <form id="transactionForm" class="transaction-form" method="POST" action="">
+
                     <div class="form-section billing-info">
                         <h3>Billing Information</h3>
-                        <input type="text" placeholder="Full Name">
-                        <input type="text" placeholder="Billing Address">
+                        <input type="text" name="billingName" placeholder="Full Name" required>
+                        <input type="text" name="billingAddress" placeholder="Billing Address" required>
                     </div>
 
                     <div class="form-section shipping-info">
                         <h3>Shipping Information</h3>
-                        <input type="text" placeholder="Full Name">
-                        <input type="text" placeholder="Shipping Address">
+                        <input type="text" name="shippingName" placeholder="Full Name" required>
+                        <input type="text" name="shippingAddress" placeholder="Shipping Address" required>
                     </div>
 
                     <div class="form-section payment-method">
                         <h3>Payment Method</h3>
-                        <input type="text" placeholder="Card Number">
-                        <input type="text" placeholder="Expiry Date">
+                        <input type="text" name="cardNumber" placeholder="Card Number" required>
+                        <input type="text" name="expiryDate" placeholder="Expiry Date" required>
 
                         <div class="payment-mode-selection">
                             <p>Select Payment Mode:</p>
                             <label for="paymentModeCash">
-                                <input type="radio" id="paymentModeCash" name="paymentMode" value="cash">
+                                <input type="radio" id="paymentModeCash" name="paymentMode" value="cash" required>
                                 Cash on Delivery
                             </label>
                             <label for="paymentModeBank">
-                                <input type="radio" id="paymentModeBank" name="paymentMode" value="bank">
+                                <input type="radio" id="paymentModeBank" name="paymentMode" value="bank" required>
                                 Through Bank
                             </label>
                         </div>
@@ -73,10 +86,10 @@ $username = $_SESSION['user_name'];
 
                     <div class="form-section order-notes">
                         <h3>Order Notes (optional)</h3>
-                        <textarea placeholder="Add any special instructions or messages..."></textarea>
+                        <textarea name="orderNotes" placeholder="Add any special instructions or messages..."></textarea>
                     </div>
 
-                    <button type="submit" class="place-order-btn">Place Order</button>
+                    <button type="submit" name="final_confirm" class="place-order-btn">Place Order</button>
                 </form>
             </div>
 
