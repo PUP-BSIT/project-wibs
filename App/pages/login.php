@@ -1,8 +1,8 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-$conn = mysqli_connect('127.0.0.1:3306','u733671518_wibs','|4Kh/3XYD','u733671518_project');
-#$conn = mysqli_connect('localhost','root','','u733671518_project');
+#$conn = mysqli_connect('127.0.0.1:3306','u733671518_wibs','|4Kh/3XYD','u733671518_project');
+$conn = mysqli_connect('localhost','root','','u733671518_project');
 session_start();
 
 $errors = array();
@@ -43,8 +43,8 @@ if (isset($_POST['submit'])) {
 
 <body>
     <header class="header">
-        <a href="index.html"><img src="../ASSETS/Back.png" alt="asdasdasd"></a>
-        <div class="header-title"><img src="../ASSETS/Company Name.png" alt="pciture"></div>
+        <div></div>
+        <div class="header-title"><img src="../ASSETS/logo.png" alt="pciture"></div>
     </header>
 
     <div class="content">   
