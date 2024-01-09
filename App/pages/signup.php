@@ -48,8 +48,8 @@ if (isset($_POST['submit'])) {
 
 <body>
   <header class="header">
-    <div class="header-icon"><a href="../landing_page/landing.html">Back</a></div>
-    <div class="header-title"><img src="../ASSETS/Company Name.png" alt=""></div>
+    <div></div>
+    <div class="header-title"><img src="../ASSETS/logo.png" alt="pciture"></div>
   </header>
 
   <div class="content">

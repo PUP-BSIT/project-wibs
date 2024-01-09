@@ -6,13 +6,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 92px;
+  padding: 26px 92px;
   background-color: #ffffff;
 }
 .header-icon {
   width: 30px;
   height: 30px; 
-  background-image: url("./ASSETS/Back.png");
   background-size: cover;
 }
 .header-title {
@@ -64,11 +63,11 @@ body {
 }
 
 .form-group button {
-  width: 100%;
+  width: 61rem;
   padding: 10px;
   border: none;
   border-radius: 4px;
-  background-color: #2a9d8f; 
+  background-color: #0B464E; 
   color: white;
   cursor: pointer;
 }
