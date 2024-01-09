@@ -1,7 +1,8 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background: #f4f4f4;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
     margin: 0;
+    padding: 0;
 }
 
 .my-cart {
@@ -18,14 +19,12 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    width: 100%;
 }
 
 .logo {
-    font-size: 48px; /* Original larger size */
+    font-size: 48px;
     font-weight: 900;
-    color: #ffffff;
-}
+}   
 
 .nav-container {
     display: flex;
@@ -34,11 +33,27 @@ body {
 }
 
 .profile-name {
-    color: white;
-    margin-bottom: 10px; /* Space between profile name and nav links */
-    margin-right: 54px; /* Adjust this to align with the navbar's end */
-    font-size: 16px; /* Adjust font size as needed */
+    display: inline-block;
+    margin-left: 20px;
 }
+
+.profile-name form {
+    display: inline;
+}
+
+.profile-name input[type="submit"] {
+    background-color: #f4433600;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-left: 10px;
+}
+
+.profile-name input[type="submit"]:hover {
+    color: red;
+}
+
 
 .nav-links {
     display: flex;
@@ -46,6 +61,7 @@ body {
 }
 
 .nav-links a {
+    position: relative; 
     color: white;
     text-decoration: none;
     padding: 8px 15px;
@@ -144,6 +160,31 @@ body {
 .cart-items .item .item-info .buttons .remove-button button {
     padding: 10px;
     border-radius: 30px;
+}
+
+.red-dot {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(252, 36, 36);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%); 
+}
+
+#notification {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50; 
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: none;
 }
   
 .order-summary {

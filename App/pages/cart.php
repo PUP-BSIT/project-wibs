@@ -9,6 +9,16 @@
 
             session_start();
 
+            $cartQuery = "SELECT COUNT(*) FROM cart WHERE user_id = ?";
+            $stmt = $conn->prepare($cartQuery);
+            $stmt->bind_param("i", $userid);
+            $stmt->execute();
+            $stmt->store_result();
+            $stmt->bind_result($cartCount);
+            $stmt->fetch();
+            $hasCartItems = $cartCount > 0;
+            $stmt->close();
+
             // Check if the user is logged in, if not then redirect to login page
             if (!isset($_SESSION['user_name'])) {
                 header("Location: login.php"); // Adjust the path as necessary
@@ -20,16 +30,17 @@
             $username = $_SESSION['user_name'];
 
             // Check if remove item request is set
-            if (isset($_POST['remove_item']) && isset($_POST['cart_id'])) {
+            $itemRemoved = false; // Variable to track if an item was removed
+                if (isset($_POST['remove_item']) && isset($_POST['cart_id'])) {
                 $cart_id = $_POST['cart_id'];
-                
-                // SQL to remove item from cart
-                $sql_remove = "DELETE FROM cart WHERE cart_id = '$cart_id'";
-                
+        
+             // SQL to remove item from cart
+            $sql_remove = "DELETE FROM cart WHERE cart_id = '$cart_id'";
+        
                 if ($conn->query($sql_remove) === TRUE) {
-                    echo "Item removed from cart successfully";
+                $itemRemoved = true; // Set to true if item is removed successfully
                 } else {
-                    echo "Error: " . $conn->error;
+                echo "Error: " . $conn->error;
                 }
             }
 
@@ -93,6 +104,11 @@
                     echo "Error: " . $sql . "<br>" . $conn->error;
                 }
             }
+
+            // Check if there are any items in the cart
+            $cart_check_sql = "SELECT * FROM cart WHERE user_id = '$userid'";
+            $cart_check_result = $conn->query($cart_check_sql);
+            $hasCartItems = $cart_check_result->num_rows > 0;
         ?>
 
         <!DOCTYPE html>
@@ -103,6 +119,25 @@
             <link rel="stylesheet" href="../css/cart.css">
         </head>
         <body>
+        <div class="overlay"></div>
+    <div class="navbar">
+        <div class="logo">WIBS</div>
+        <div class="nav-links">
+            <a href="homepage.php">Home</a>
+            <a href="order_status.php">Order Status</a>
+            <a href="cart.php">My Cart<?php if ($hasCartItems) echo '<span class="red-dot"></span>'; ?></a>
+        </div>
+        <div class="profile-name">
+            <strong><?php echo $username?></strong>
+            |
+            <form action="logout.php" method="post">
+                <input type="submit" value="Logout">
+            </form>
+        </div>
+    </div>
+    <?php if ($itemRemoved): ?>
+        <div class='notification' id='notification'>Item removed from cart successfully</div>
+    <?php endif; ?>
             <div class="my-cart">
                 <h1>My Cart</h1>
             </div>
@@ -141,7 +176,9 @@
                 <div class="order-summary">
                     <div class="order-form">
                         <form method="POST" action="">
-                            <button type="submit" name="place_order">Place Order</button>
+                        <button type="submit" name="place_order" <?php if (!$hasCartItems) 
+                        echo 'disabled style="background-color: darkgray;"'; ?>>Place Order</button>
+            </form>
                         </form>
                     </div>
                 </div>
